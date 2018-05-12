@@ -1,10 +1,12 @@
-aa
-
-
-
-ss
-
-# -*- coding: UTF-8 -*-#!/usr/bin/env pythonimport matplotlibmatplotlib.use('pdf')import tensorflow as tfimport numpy as npfrom scipy.misc import imreadfrom matplotlib import pyplot as pltimport networkslim = tf.contrib.slimimport os,re,cv2import argparseimport json,timeimport PIL.Imagefrom metrics import *try:    import ioexcept ImportError:    import io as io
+# -*- coding: UTF-8 -*-#!/usr/bin/env python
+import matplotlibmatplotlib.use('pdf')
+import tensorflow as tfimport numpy as npfrom scipy.misc 
+import imreadfrom matplotlib 
+import pyplot as pltimport networkslim = tf.contrib.slim
+import os,re,cv2import argparseimport json,time
+import PIL.Imagefrom metrics import *try:    
+  import ioexcept ImportError:    
+    import io as io
 plt.interactive(False)
 parser = argparse.ArgumentParser()
 envarg = parser.add_argument_group('Eval params')envarg.add_argument("--model_id", help="Model id name to be loaded.")envarg.add_argument("--gpu_id", type=int, help="Gpu id name to be used.")envarg.add_argument("--batch_size", type=int, default = 10, help="Batch size of test.")envarg.add_argument("--ResizeWidth", type=int, default = 513, help="Resize Width of pic.")envarg.add_argument("--ResizeHeight", type=int, default = 513, help="Resize Height of pic.")envarg.add_argument("--need_Resize", type=bool, default=False, help="need to resize pic?.")envarg.add_argument("--save_Result", type=bool, default = False, help="Want to save result?.")envarg.add_argument("--Pic_Dir", help="Test Pic_Dir.")input_args = parser.parse_args()
